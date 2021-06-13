@@ -56,8 +56,8 @@ public class UserService {
 		// TODO Auto-generated method stub
 		ResponseTemplateVO vo=new ResponseTemplateVO();
 		User user=userRepository.findByUserId(userId);
-		System.out.println("http://localhost:9003/departments/userId==>>"+userId);
-		Department department = restTemplate.getForObject("http://localhost:9003/departments/"+user.getDepartmentId() , Department.class);
+		//System.out.println("http://localhost:9003/departments/userId==>>"+userId);
+		Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/"+user.getDepartmentId() , Department.class);
 		//Department department =restTemplate.get
 		
 		vo.setUser(user); 
