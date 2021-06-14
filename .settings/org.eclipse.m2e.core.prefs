@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 activeProfiles=pom.xml
 eclipse.preferences.version=1
 resolveWorkspaceProjects=true
 version=1
+=======
+activeProfiles=pom.xml
+eclipse.preferences.version=1
+resolveWorkspaceProjects=true
+version=1
+>>>>>>> branch 'master' of https://github.com/soodneeraj/user-service.git

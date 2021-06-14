@@ -9,10 +9,15 @@ import com.example.user.VO.ResponseTemplateVO;
 import com.example.user.entity.User;
 import com.example.user.repository.UserRepository;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
+
 @Service
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserService {
 	
 	@Autowired
@@ -20,8 +25,7 @@ public class UserService {
 	
 	@Autowired
 	private RestTemplate restTemplate;
-	
-	
+		
 	public UserRepository getUserRepository() {
 		return userRepository;
 	}
@@ -52,7 +56,8 @@ public class UserService {
 		// TODO Auto-generated method stub
 		ResponseTemplateVO vo=new ResponseTemplateVO();
 		User user=userRepository.findByUserId(userId);
-		Department department = restTemplate.getForObject("http://localhost:9001/departments/"+user.getDepartmentId() , Department.class);
+		//System.out.println("http://localhost:9003/departments/userId==>>"+userId);
+		Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/"+user.getDepartmentId() , Department.class);
 		//Department department =restTemplate.get
 		
 		vo.setUser(user); 
